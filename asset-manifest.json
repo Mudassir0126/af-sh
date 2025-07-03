@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/af-sh/static/css/main.e6c13ad2.css",
+    "main.js": "/af-sh/static/js/main.961b8789.js",
+    "index.html": "/af-sh/index.html",
+    "main.e6c13ad2.css.map": "/af-sh/static/css/main.e6c13ad2.css.map",
+    "main.961b8789.js.map": "/af-sh/static/js/main.961b8789.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.961b8789.js"
+  ]
+}
