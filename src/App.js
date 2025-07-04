@@ -5,37 +5,37 @@ const services = [
   {
     title: "Construction Contracts",
     description: "Full-service contracting with or without client-supplied materials.",
-    image: "/images/construction.jpg"
+    image: "{process.env.PUBLIC_URL}/images/construction.jpg"
   },
   {
     title: "Civil Works",
     description: "Structural construction and foundation work for residential and industrial sites.",
-    image: "/images/civil.jpg"
+    image: "{process.env.PUBLIC_URL}/images/civil.jpg"
   },
   {
     title: "Repairs & Renovations",
     description: "Building repairs, waterproofing, crack filling, and renovation solutions.",
-    image: "/images/repairs.jpg"
+    image: "{process.env.PUBLIC_URL}/images/repairs.jpg"
   },
   {
     title: "Carpentry & Interiors",
     description: "Doors, windows, modular furniture, wooden floors, and partition work.",
-    image: "/images/carpentry.jpg"
+    image: "{process.env.PUBLIC_URL}/images/carpentry.jpg"
   },
   {
     title: "Painting Services",
     description: "Interior and exterior painting, waterproof coats, and textured finishes.",
-    image: "/images/painting.jpg"
+    image: "{process.env.PUBLIC_URL}/images/painting.jpg"
   },
   {
     title: "STP & ETP Services",
     description: "Installation and maintenance of Sewage and Effluent Treatment Plants.",
-    image: "/images/stp.jpg"
+    image: "{process.env.PUBLIC_URL}/images/stp.jpg"
   },
   {
     title: "Rainwater Harvesting",
     description: "End-to-end rainwater harvesting systems for sustainable water use.",
-    image: "/images/rainwater.jpg"
+    image: "{process.env.PUBLIC_URL}/images/rainwater.jpg"
   }
 ];
 
@@ -46,7 +46,7 @@ export default function Home() {
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary px-3">
         <div className="container-fluid">
           <a className="navbar-brand d-flex align-items-center" href="#">
-            <img src="/images/logo.jpg" alt="Logo" width="40" height="40" className="me-2" />
+            <img src="{process.env.PUBLIC_URL}/images/logo.jpg" alt="Logo" width="40" height="40" className="me-2" />
             <strong>AF-SH Constructions</strong>
           </a>
           <button
@@ -80,7 +80,7 @@ export default function Home() {
       <div
         className="text-white"
         style={{
-          backgroundImage: "url('/images/bg-hero.jpg')",
+          backgroundImage: "url('{process.env.PUBLIC_URL}/images/bg-hero.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           padding: "80px 0"
