@@ -5,37 +5,37 @@ const services = [
   {
     title: "Construction Contracts",
     description: "Full-service contracting with or without client-supplied materials.",
-    image: "{process.env.PUBLIC_URL}/images/construction.jpg"
+    image: `${process.env.PUBLIC_URL}/images/construction.jpg`
   },
   {
     title: "Civil Works",
     description: "Structural construction and foundation work for residential and industrial sites.",
-    image: "{process.env.PUBLIC_URL}/images/civil.jpg"
+    image: `${process.env.PUBLIC_URL}/images/civil.jpg`
   },
   {
     title: "Repairs & Renovations",
     description: "Building repairs, waterproofing, crack filling, and renovation solutions.",
-    image: "{process.env.PUBLIC_URL}/images/repairs.jpg"
+    image: `${process.env.PUBLIC_URL}/images/repairs.jpg`
   },
   {
     title: "Carpentry & Interiors",
     description: "Doors, windows, modular furniture, wooden floors, and partition work.",
-    image: "{process.env.PUBLIC_URL}/images/carpentry.jpg"
+    image: `${process.env.PUBLIC_URL}/images/carpentry.jpg`
   },
   {
     title: "Painting Services",
     description: "Interior and exterior painting, waterproof coats, and textured finishes.",
-    image: "{process.env.PUBLIC_URL}/images/painting.jpg"
+    image: `${process.env.PUBLIC_URL}/images/painting.jpg`
   },
   {
     title: "STP & ETP Services",
     description: "Installation and maintenance of Sewage and Effluent Treatment Plants.",
-    image: "{process.env.PUBLIC_URL}/images/stp.jpg"
+    image: `${process.env.PUBLIC_URL}/images/stp.jpg`
   },
   {
     title: "Rainwater Harvesting",
     description: "End-to-end rainwater harvesting systems for sustainable water use.",
-    image: "{process.env.PUBLIC_URL}/images/rainwater.jpg"
+    image: `${process.env.PUBLIC_URL}/images/rainwater.jpg`
   }
 ];
 
@@ -43,10 +43,11 @@ export default function Home() {
   return (
     <div>
 
+      {/* Navbar */}
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary px-3">
         <div className="container-fluid">
           <a className="navbar-brand d-flex align-items-center" href="#">
-            <img src="{process.env.PUBLIC_URL}/images/logo.jpg" alt="Logo" width="40" height="40" className="me-2" />
+            <img src={`${process.env.PUBLIC_URL}/images/logo.jpg`} alt="Logo" width="40" height="40" className="me-2" />
             <strong>AF-SH Constructions</strong>
           </a>
           <button
@@ -76,11 +77,11 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section with background */}
+      {/* Hero Section */}
       <div
         className="text-white"
         style={{
-          backgroundImage: "url('{process.env.PUBLIC_URL}/images/bg-hero.jpg')",
+          backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg-hero.jpg)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           padding: "80px 0"
@@ -102,10 +103,8 @@ export default function Home() {
         </div>
       </div>
 
-
-
       {/* Services Section */}
-      <div className="container py-5">
+      <div className="container py-5" id="services">
         <h2 className="text-center mb-4">Our Services</h2>
         <div className="row g-4">
           {services.map((service, idx) => (
@@ -127,42 +126,29 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Why Choose Us */}
-      <div className="bg-light py-5">
+      {/* Why Choose Us Section */}
+      <div className="bg-light py-5" id="why">
         <div className="container">
           <h2 className="text-center mb-5">Why Choose Us</h2>
           <div className="row g-4">
-            <div className="col-md-6">
-              <div className="p-4 border rounded bg-white h-100 shadow-sm">
-                <h5>✅ Transparent Pricing</h5>
-                <p>We provide detailed, upfront quotations with no hidden charges.</p>
+            {[
+              { title: "✅ Transparent Pricing", desc: "We provide detailed, upfront quotations with no hidden charges." },
+              { title: "✅ Expert Workforce", desc: "Our skilled engineers and workers ensure technical precision at every stage." },
+              { title: "✅ Timely Project Delivery", desc: "We prioritize project timelines and deliver on or before schedule." },
+              { title: "✅ All-in-One Services", desc: "From foundation to finish, we handle every aspect — including plumbing, treatment plants, and interiors." }
+            ].map((item, i) => (
+              <div className="col-md-6" key={i}>
+                <div className="p-4 border rounded bg-white h-100 shadow-sm">
+                  <h5>{item.title}</h5>
+                  <p>{item.desc}</p>
+                </div>
               </div>
-            </div>
-            <div className="col-md-6">
-              <div className="p-4 border rounded bg-white h-100 shadow-sm">
-                <h5>✅ Expert Workforce</h5>
-                <p>Our skilled engineers and workers ensure technical precision at every stage.</p>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="p-4 border rounded bg-white h-100 shadow-sm">
-                <h5>✅ Timely Project Delivery</h5>
-                <p>We prioritize project timelines and deliver on or before schedule.</p>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="p-4 border rounded bg-white h-100 shadow-sm">
-                <h5>✅ All-in-One Services</h5>
-                <p>From foundation to finish, we handle every aspect — including plumbing, treatment plants, and interiors.</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
 
-
       {/* Footer Contact Section */}
-
       <footer className="bg-dark text-white pt-5" id="contact">
         <div className="container">
           <div className="row">
@@ -186,9 +172,6 @@ export default function Home() {
           </p>
         </div>
       </footer>
-
-
-
     </div>
   );
 }
